@@ -1,0 +1,120 @@
+parameters:
+    asdoria.form.type.facet_group.validation_groups: ['sylius']
+    asdoria.form.type.facet_group_translation.validation_groups: ['sylius']
+    asdoria.form.type.facet_filter.validation_groups: ['sylius']
+#     asdoria.form.type._label.validation_groups: ['sylius']
+#     asdoria.form.type._label_translation.validation_groups: ['sylius']
+    asdoria.form.type.facet.validation_groups: ['sylius']
+    asdoria.form.type.facet_type_product_attribute.validation_groups: ['sylius']
+    asdoria.form.type.facet_type_product_option.validation_groups: ['sylius']
+    asdoria.form.type.facet_type_taxon.validation_groups: ['sylius']
+    asdoria.form.type.facet_translation.validation_groups: ['sylius']
+
+services:
+    asdoria.form.type.facet_group:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetGroupType
+        arguments:
+            $dataClass: '%asdoria.model.facet_group.class%'
+            $validationGroups: '%asdoria.form.type.facet_group.validation_groups%'
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet_group_translation:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetGroupTranslationType
+        arguments:
+            $dataClass: '%asdoria.model.facet_group_translation.class%'
+            $validationGroups: '%asdoria.form.type.facet_group_translation.validation_groups%'
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet_filter:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetFilterType
+        arguments:
+            $dataClass: '%asdoria.model.facet_filter.class%'
+            $validationGroups: '%asdoria.form.type.facet_filter.validation_groups%'
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetType
+        arguments:
+            $metadataRegistry: '@sylius.resource_registry'
+            $dataClass: '%asdoria.model.facet.class%'
+            $validationGroups: '%asdoria.form.type.facet.validation_groups%'
+        tags:
+            - { name: form.type }
+
+
+    asdoria.form.type.facet_type_product_attribute:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetTypeProductAttributeType
+        arguments:
+            $dataClass: '%asdoria.model.facet_type_product_attribute.class%'
+            $validationGroups: '%asdoria.form.type.facet_type_product_attribute.validation_groups%'
+        calls:
+            - [setFilterFormTypeRegistry, ['@asdoria.form_registry.facet_type_filter']]
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet_type_product_option:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetTypeProductOptionType
+        arguments:
+            $dataClass: '%asdoria.model.facet_type_product_option.class%'
+            $validationGroups: '%asdoria.form.type.facet_type_product_option.validation_groups%'
+        calls:
+            - [setFilterFormTypeRegistry, ['@asdoria.form_registry.facet_type_filter']]
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet_type_taxon:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetTypeTaxonType
+        arguments:
+            $dataClass: '%asdoria.model.facet_type_taxon.class%'
+            $validationGroups: '%asdoria.form.type.facet_type_taxon.validation_groups%'
+        calls:
+            - [setFilterFormTypeRegistry, ['@asdoria.form_registry.facet_type_filter']]
+        tags:
+            - { name: form.type }
+
+
+    asdoria.form.type.facet_translation:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetTranslationType
+        arguments:
+            $dataClass: '%asdoria.model.facet_translation.class%'
+            $validationGroups: '%asdoria.form.type.facet_translation.validation_groups%'
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.facet_filter_code_choice:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetFilterCodeChoiceType
+        arguments:
+            $facetFilterRepository: '@asdoria.repository.facet_filter'
+        tags:
+            - { name: form.type }
+            
+    asdoria.form.type.facet_filter_choice:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\FacetFilterChoiceType
+        arguments:
+            $facetFilterRepository: '@asdoria.repository.facet_filter'
+        tags:
+            - { name: form.type }
+            
+    asdoria.form.type.grid_facet_filtering:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\Grid\FacetFilteringType
+        calls:
+            - ['setRequestStack', ['@request_stack']]
+            - ['setEntityManager', ['@doctrine.orm.entity_manager']]
+            - ['setShopperContext', ['@sylius.context.shopper']]
+            - ['setFormTypeRegistry', ['@asdoria.form_registry.facet_type_filter']]
+            - ['setFilterServiceRegistry', ['@asdoria.attribute_filter_service_registry']]
+        tags:
+            - { name: form.type }
+
+    asdoria.form.type.product_taxon:
+      class: Asdoria\SyliusFacetFilterPlugin\Form\Type\ProductTaxonFilterType
+      arguments:
+          $expression: '@sylius.expression_language'
+          $requestStack: '@request_stack'
+      calls:
+          - [ setContainer, ['@service_container']]
+      tags:
+        - { name: form.type }

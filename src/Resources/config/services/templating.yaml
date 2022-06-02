@@ -1,0 +1,14 @@
+services:
+#     Asdoria\SyliusFacetFilterPlugin\Helper\Templating\Helper:
+#         lazy: true
+#         arguments:
+#             $entityManager: '@doctrine.orm.entity_manager'
+#             $shopperContext: '@sylius.context.shopper'
+#             $localeContext: '@sylius.context.locale'
+#         tags:
+#             - { name: templating.helper, alias:  }
+
+#     Asdoria\SyliusFacetFilterPlugin\Helper\Templating\FacetSearchHelper:
+#         lazy: true
+#         tags:
+#             - { name: templating.helper, alias: facet_search }

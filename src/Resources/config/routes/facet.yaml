@@ -1,0 +1,136 @@
+asdoria_admin_facet_index:
+    path: /facets
+    methods: [GET]
+    defaults:
+        _controller: asdoria.controller.facet:indexAction
+        _sylius:
+            grid: asdoria_admin_facet
+            vars:
+                facetFilter: expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
+                templates:
+                    breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Index/_breadcrumb.html.twig"
+                route:
+                    parameters:
+                        facetFilterId: $facetFilterId
+            section: admin
+            template: '@SyliusAdmin/Crud/index.html.twig'
+
+
+asdoria_admin_facet_update:
+    path: /facets/{id}/edit
+    methods: [GET, PUT]
+    defaults:
+        _controller: asdoria.controller.facet:updateAction
+        _sylius:
+            redirect:
+                route: asdoria_admin_facet_index
+                parameters:
+                    facetFilterId : $facetFilterId
+            section: admin
+            template: '@SyliusAdmin/Crud/update.html.twig'
+            vars:
+                facetFilter: expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
+                route:
+                    name: asdoria_admin_facet_update
+                    parameters:
+                        facetFilterId: $facetFilterId
+                        id: $id
+                templates:
+                   form: "@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig"
+                   toolbar: "@AsdoriaSyliusFacetFilterPlugin/Facet/Update/_toolbar.html.twig"
+                   breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Update/_breadcrumb.html.twig"
+                   
+asdoria_admin_facet_create_product_attribute:
+        path: /facets/new/product-attribute
+        methods: [GET, POST]
+        defaults:
+            _controller: asdoria.controller.facet:createAction
+            _sylius:
+                section: admin
+                factory:
+                    method: createForProductAttribute # like here for example
+                    arguments:
+                        - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
+                template: '@SyliusAdmin/Crud/create.html.twig'
+                redirect: 
+                    route: asdoria_admin_facet_index
+                    parameters:
+                        facetFilterId : $facetFilterId
+                vars:
+                    subheader: asdoria.ui.manage_your_facet_product_attribute
+                    templates:
+                        form: '@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig'
+                        breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Create/ProductAttribute/_breadcrumb.html.twig"
+                    route:
+                        name: asdoria_admin_facet_create_product_attribute
+                        parameters:
+                            facetFilterId : $facetFilterId
+
+asdoria_admin_facet_create_product_option:
+        path: /facets/new/product-option
+        methods: [GET, POST]
+        defaults:
+            _controller: asdoria.controller.facet:createAction
+            _sylius:
+                section: admin
+                factory:
+                    method: createForProductOption # like here for example
+                    arguments:
+                        - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
+                template: '@SyliusAdmin/Crud/create.html.twig'
+                redirect: 
+                    route: asdoria_admin_facet_index
+                    parameters:
+                        facetFilterId : $facetFilterId
+                vars:
+                    subheader: asdoria.ui.manage_your_facet_product_option
+                    templates:
+                        form: '@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig'
+                        breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Create/ProductOption/_breadcrumb.html.twig"
+                    route:
+                        name: asdoria_admin_facet_create_product_option
+                        parameters:
+                            facetFilterId : $facetFilterId
+
+asdoria_admin_facet_create_taxon:
+        path: /facets/new/taxon
+        methods: [GET, POST]
+        defaults:
+            _controller: asdoria.controller.facet:createAction
+            _sylius:
+                section: admin
+                factory:
+                    method: createForTaxon # like here for example
+                    arguments:
+                        - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
+                template: '@SyliusAdmin/Crud/create.html.twig'
+                redirect: 
+                    route: asdoria_admin_facet_index
+                    parameters:
+                        facetFilterId: $facetFilterId
+                vars:
+                    subheader: asdoria.ui.manage_your_facet_taxon
+                    templates:
+                        form: '@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig'
+                        breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Create/Taxon/_breadcrumb.html.twig"
+                    route:
+                        name: asdoria_admin_facet_create_taxon
+                        parameters:
+                            facetFilterId : $facetFilterId
+                            id: $id
+
+asdoria_admin_facet_delete:
+    path: /facets/{id}
+    methods: [DELETE]
+    defaults:
+        _controller: asdoria.controller.facet:deleteAction
+        _sylius:
+            redirect:
+                route: asdoria_admin_facet_index
+                parameters:
+                    facetFilterId : $facetFilterId
+            section: admin
+            vars:
+                route:
+                    parameters:
+                        facetFilterId : $facetFilterId

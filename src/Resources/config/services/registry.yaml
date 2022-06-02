@@ -1,0 +1,16 @@
+services:
+
+    asdoria.form_registry.facet_type_filter:
+       class: Asdoria\SyliusFacetFilterPlugin\Registry\FormTypeRegistry
+
+    asdoria.facet_registry.filter:
+        class: Sylius\Component\Registry\ServiceRegistry
+        arguments:
+            - 'Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\Model\DefaultFilterInterface'
+            - 'grid filter for facet'
+
+    asdoria.attribute_filter_service_registry:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\Filters\AttributeFilterServiceRegistry
+        # inject all services tagged with app.handler as first argument
+        # and use the value of the 'key' tag attribute to index the services
+        arguments: [!tagged { tag: 'attribute_filter' }]

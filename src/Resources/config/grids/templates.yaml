@@ -1,0 +1,7 @@
+sylius_grid:
+    templates:
+        filter:
+            facets_filters: "@AsdoriaSyliusFacetFilterPlugin/Grid/Filter/facetsFilters.html.twig"
+        action:
+            update_facet_positions: "@AsdoriaSyliusFacetFilterPlugin/Grid/Action/Facet/updatePositions.html.twig"
+            update_facet_group_positions: "@AsdoriaSyliusFacetFilterPlugin/Grid/Action/FacetGroup/updatePositions.html.twig"

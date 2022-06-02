@@ -1,0 +1,9 @@
+services:
+    asdoria.grid_driver.doctrine.orm.facet_filter:
+        class: Asdoria\SyliusFacetFilterPlugin\Doctrine\ORM\FacetFilterDriver
+        decorates: sylius.grid_driver.doctrine.orm
+        arguments:
+            $inner: '@asdoria.grid_driver.doctrine.orm.facet_filter.inner'
+            $requestStack: '@request_stack'
+            $gridProvider: '@sylius.grid.provider'
+            $services: ['@asdoria.form.type.grid_facet_filtering', '@asdoria.grid_filter.shop_facets_filters']

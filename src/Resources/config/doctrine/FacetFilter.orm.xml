@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+
+    <mapped-superclass name="Asdoria\SyliusFacetFilterPlugin\Entity\FacetFilter" table="asdoria_facet_filter"   >
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="code" column="code" type="string" />
+        <field name="name" column="name" type="string" />
+        <one-to-many field="facets" target-entity="Asdoria\SyliusFacetFilterPlugin\Model\FacetInterface" mapped-by="facetFilter" orphan-removal="true"  >
+            <cascade>
+                <cascade-all/>
+            </cascade>
+            <order-by>
+                <order-by-field name="position" direction="ASC" />
+            </order-by>
+        </one-to-many>
+    </mapped-superclass>
+
+</doctrine-mapping>

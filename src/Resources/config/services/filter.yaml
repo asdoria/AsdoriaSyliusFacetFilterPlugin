@@ -1,0 +1,48 @@
+services:
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectMultipleFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectMultipleTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectMultipleTypeFormSubscriber'}
+    
+    asdoria.filter_grid.attribute_select_expanded:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectMultipleFilter
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectExpandedMultipleTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectExpandedMultipleTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeCheckboxFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeCheckboxTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeCheckboxTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\TaxonSelectFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.taxon.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectTypeFormSubscriber'}
+
+    asdoria.filter_grid.taxon_group_select:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\TaxonSelectFilter
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.taxon.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectGroupByTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectGroupByTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\TaxonSelectMultipleFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.taxon.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectMultipleTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectMultipleTypeFormSubscriber'}
+
+    asdoria.filter_grid.taxon_select_expand_multiple:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\TaxonSelectMultipleFilter
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.taxon.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectExpandedTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\TaxonSelectExpandedTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionSelectFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionSelectMultipleFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectMultipleTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectMultipleTypeFormSubscriber'}
+
+    asdoria.filter_grid.product_option_select_expand_multiple:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionSelectMultipleFilter
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectExpandedTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectExpandedTypeFormSubscriber'}

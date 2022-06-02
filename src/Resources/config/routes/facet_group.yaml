@@ -1,0 +1,83 @@
+asdoria_admin_facet_group:
+  resource: |
+    alias: asdoria.facet_group
+    section: admin
+    templates: '@SyliusAdmin\\Crud'
+    except: ['show']
+    redirect: update
+    grid: asdoria_admin_facet_group
+    permission: true
+    vars:
+       update:
+         templates:
+           breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Update/_breadcrumb.html.twig"
+       index:
+         templates:
+           breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Index/_breadcrumb.html.twig"
+       create:
+         templates:
+           breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Create/_breadcrumb.html.twig"
+  type: sylius.resource
+
+
+asdoria_admin_facet_group_children_index:
+    path: /facet-groups/{facetGroupId}/children
+    methods: [GET]
+    defaults:
+      _controller: asdoria.controller.facet_group:indexAction
+      _sylius:
+        grid: asdoria_admin_facet_group_children
+        vars:
+          facetGroup: expr:notFoundOnNull(service('asdoria.repository.facet_group').find($facetGroupId))
+          templates:
+            breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Crud/Children/Index/_breadcrumb.html.twig"
+          route:
+            parameters:
+              facetGroupId: $facetGroupId
+        section: admin
+        template: '@SyliusAdmin/Crud/index.html.twig'
+
+
+
+asdoria_admin_facet_group_children_create:
+  path: /facet-groups/{facetGroupId}/children/new
+  methods: [GET, POST]
+  defaults:
+    _controller: asdoria.controller.facet_group:createAction
+    _sylius:
+      redirect:
+        route: asdoria_admin_facet_group_children_index
+        parameters:
+          facetGroupId: $facetGroupId
+      section: admin
+      template: '@SyliusAdmin/Crud/create.html.twig'
+      factory:
+        method: createForParent
+        arguments:
+          facetGroup: expr:notFoundOnNull(service('asdoria.repository.facet_group').find($facetGroupId))
+      vars:
+        facetGroup: expr:notFoundOnNull(service('asdoria.repository.facet_group').find($facetGroupId))
+        route:
+          name: asdoria_admin_facet_group_children_create
+          parameters:
+            facetGroupId: $facetGroupId
+        templates:
+          form: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
+          breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Crud/Children/Create/_breadcrumb.html.twig"
+
+asdoria_admin_facet_group_children_update:
+  path: /facet-groups/{facetGroupId}/children/{id}/edit
+  methods: [GET, PUT]
+  defaults:
+    _controller: asdoria.controller.facet_group:updateAction
+    _sylius:
+      redirect: referer
+      section: admin
+      template: '@SyliusAdmin/Crud/update.html.twig'
+      vars:
+        facetGroup: expr:notFoundOnNull(service('asdoria.repository.facet_group').find($facetGroupId))
+        route: referer
+        templates:
+          form: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
+          breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Crud/Children/Update/_breadcrumb.html.twig"
+

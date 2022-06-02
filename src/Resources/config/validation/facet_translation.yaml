@@ -1,0 +1,8 @@
+Asdoria\SyliusFacetFilterPlugin\Entity\FacetTranslation:
+    properties:
+        locale:
+            - NotBlank:
+                groups: [sylius]
+        title:
+            - NotBlank:
+                groups: [sylius]

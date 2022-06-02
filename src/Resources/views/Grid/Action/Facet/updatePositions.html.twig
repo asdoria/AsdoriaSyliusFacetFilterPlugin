@@ -1,0 +1,9 @@
+<form class="asdoria-update-facets"
+      action="{{ path('asdoria_admin_ajax_facet_update_position') }}"
+      data-csrf-token="{{ csrf_token('update-facet-position') }}"
+>
+    <button class="ui labeled loadable icon button sylius-save-position" type="submit">
+        <i class="icon checkmark"></i>
+        {{ 'sylius.ui.save_positions'|trans }}
+    </button>
+</form>

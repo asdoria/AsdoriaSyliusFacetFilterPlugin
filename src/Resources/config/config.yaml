@@ -1,0 +1,15 @@
+imports:
+    - { resource: "grids/*.yaml" }
+
+sylius_ui:
+    events:
+        asdoria.admin.facet.index.javascripts:
+            blocks:
+                asdoria_facets_javascripts:
+                    template: "@AsdoriaSyliusFacetFilterPlugin/_javascripts.html.twig"
+                    priority: 10
+        asdoria.admin.facet_group.index.javascripts:
+            blocks:
+                asdoria_pictogram_groups_javascripts:
+                    template: "@AsdoriaSyliusFacetFilterPlugin/_javascripts.html.twig"
+                    priority: 10

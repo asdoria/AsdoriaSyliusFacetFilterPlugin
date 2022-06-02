@@ -1,0 +1,12 @@
+services:
+#     Asdoria\SyliusFacetFilterPlugin\Twig\Extension:
+#         arguments:
+#             $helper: '@Asdoria\SyliusFacetFilterPlugin\Helper\Templating\Helper'
+#         tags:
+#             - { name: twig.extension }
+
+#     Asdoria\SyliusFacetFilterPlugin\Twig\FacetSearchExtension:
+#         arguments:
+#             $helper: '@Asdoria\SyliusFacetFilterPlugin\Helper\Templating\FacetSearchHelper'
+#         tags:
+#             - { name: twig.extension }

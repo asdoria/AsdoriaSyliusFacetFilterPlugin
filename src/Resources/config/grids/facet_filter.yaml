@@ -1,0 +1,62 @@
+sylius_grid:
+    grids:
+        asdoria_admin_facet_filter:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: '%asdoria.model.facet_filter.class%'
+                    repository:
+                        method: createListQueryBuilder
+            fields:
+                code:
+                    type: string
+                    label: sylius.ui.code
+                name:
+                    type: string
+                    label: sylius.ui.name
+            actions:
+                main:
+                    create:
+                        type: create
+                    manage_facet_group:
+                        type: default
+                        label: asdoria.ui.manage_facet_group
+                        icon: random
+                        options:
+                            link:
+                                route: asdoria_admin_facet_group_index
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+                    manage:
+                        type: links
+                        label: asdoria.ui.manage_your_facet
+                        icon: cubes
+                        options:
+                            links:
+                                list:
+                                    route: asdoria_admin_facet_index
+                                    icon: plus
+                                    label: asdoria.ui.facets
+                                    parameters:
+                                        facetFilterId: resource.id
+                                attribute:
+                                    route: asdoria_admin_facet_create_product_attribute
+                                    icon: plus
+                                    label: asdoria.ui.new_facet_create_product_attribute
+                                    parameters:
+                                        facetFilterId: resource.id
+                                option:
+                                    route: asdoria_admin_facet_create_product_option
+                                    icon: plus
+                                    label: asdoria.ui.new_facet_create_product_option
+                                    parameters:
+                                        facetFilterId: resource.id
+                                taxon:
+                                    route: asdoria_admin_facet_create_taxon
+                                    icon: plus
+                                    label: asdoria.ui.new_facet_create_product_taxon
+                                    parameters:
+                                        facetFilterId: resource.id

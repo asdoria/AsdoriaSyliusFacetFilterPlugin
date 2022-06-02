@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+    <entity name="Asdoria\SyliusFacetFilterPlugin\Entity\FacetTypeGeneric" table="asdoria_facet_type" inheritance-type="SINGLE_TABLE">
+
+        <discriminator-column name="discr" type="string"/>
+
+        <discriminator-map >
+<!--            <discriminator-mapping value="generic" class="FacetTypeGeneric"/>-->
+            <discriminator-mapping value="attribute" class="Asdoria\SyliusFacetFilterPlugin\Entity\FacetTypeProductAttribute"/>
+            <discriminator-mapping value="option" class="Asdoria\SyliusFacetFilterPlugin\Entity\FacetTypeProductOption"/>
+            <discriminator-mapping value="taxon" class="Asdoria\SyliusFacetFilterPlugin\Entity\FacetTypeTaxon"/>
+        </discriminator-map>
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+        <field name="type" type="string" column="type" nullable="false" length="100"/>
+
+        <one-to-one field="facet" target-entity="Asdoria\SyliusFacetFilterPlugin\Model\FacetInterface" mapped-by="facetType" />
+    </entity>
+
+</doctrine-mapping>

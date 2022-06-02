@@ -1,0 +1,12 @@
+{% extends '@SyliusUi/Form/theme.html.twig' %}
+
+{%- block asdoria_facet_filtering_form_group_row -%}
+    <div class="ui vertical segment">
+    <div
+        class="{% if required %}required {% endif %}ui segment field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        {{- form_label(form, null, {'label_attr': {'class': 'ui dividing header'}}) }}
+        {{- form_widget(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+    </div>
+{%- endblock asdoria_facet_filtering_form_group_row -%}

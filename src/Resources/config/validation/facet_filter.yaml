@@ -1,0 +1,21 @@
+Asdoria\SyliusFacetFilterPlugin\Entity\FacetFilter:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+                fields: [ code ]
+                groups: [ sylius ]
+    properties:
+        code:
+            - NotBlank:
+                groups: [sylius]
+
+        name:
+            - NotBlank:
+                groups: [sylius]
+#         facets:
+#             - Valid:
+#                   groups: [sylius]
+#     getters:
+#         facets:
+#             - Sylius\Bundle\ResourceBundle\Validator\Constraints\UniqueWithinCollectionConstraint:
+#                   message: 'asdoria.facet.code.within_facet_filter_unique'
+#                   groups: [sylius]

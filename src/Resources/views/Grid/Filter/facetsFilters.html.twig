@@ -1,0 +1,7 @@
+{% form_theme form '@AsdoriaSyliusFacetFilterPlugin/Form/theme.html.twig' %}
+
+<div id="asdoria-shop-facet-filters" class="asdoria-shop-facet-filters" >
+    {% for children in form.children  %}
+        {{ form_row(children) }}
+    {% endfor %}
+</div>

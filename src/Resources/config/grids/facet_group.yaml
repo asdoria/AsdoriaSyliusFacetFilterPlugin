@@ -1,0 +1,86 @@
+sylius_grid:
+    grids:
+        asdoria_admin_facet_group:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%asdoria.model.facet_group.class%"
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                position: asc
+            fields:
+                code:
+                    type: string
+                    label: sylius.ui.code
+                name:
+                    type: string
+                    label: sylius.ui.name
+                    sortable: translations.name
+                position:
+                    type: twig
+                    label: sylius.ui.position
+                    sortable: position
+                    path: .
+                    options:
+                        template: "@AsdoriaSyliusFacetFilterPlugin/Grid/Field/facet_group_position.html.twig"
+            actions:
+                main:
+                    create:
+                        type: create
+                    update_positions:
+                        type: update_facet_group_positions
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+                    manage:
+                        type: default
+                        label: asdoria.ui.manage_facet_group_children
+                        icon: cubes
+                        options:
+                            link:
+                                route: asdoria_admin_facet_group_children_index
+                                icon: plus
+                                label: asdoria.ui.manage_facet_group_children
+                                parameters:
+                                    facetGroupId: resource.id
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [translations.name]
+
+        asdoria_admin_facet_group_children:
+            extends: asdoria_admin_facet_group
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%asdoria.model.facet_group.class%"
+                    repository:
+                        method: createListQueryBuilder
+                        arguments:
+                            $facetGroupId: "expr:notFoundOnNull(service('asdoria.repository.facet_group').find($facetGroupId))"
+
+            actions:
+                main:
+                    create:
+                        type: create
+                        options:
+                            link:
+                                route: asdoria_admin_facet_group_children_create
+                                parameters:
+                                    facetGroupId: $facetGroupId
+                item:
+                    update:
+                        type: update
+                        options:
+                            link:
+                                route: asdoria_admin_facet_group_children_update
+                                parameters:
+                                    facetGroupId: $facetGroupId
+                                    id: resource.id
+                    delete:
+                        type: delete

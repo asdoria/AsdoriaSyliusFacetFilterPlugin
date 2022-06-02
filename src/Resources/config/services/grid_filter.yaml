@@ -1,0 +1,8 @@
+services:
+    asdoria.grid_filter.shop_facets_filters:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\FacetsFilter
+        arguments:
+            $filterRegistry: '@asdoria.facet_registry.filter'
+            $facetFilterRepository: '@asdoria.repository.facet_filter'
+        tags:
+            - { name: sylius.grid_filter, type: facets_filters, form_type: Asdoria\SyliusFacetFilterPlugin\Form\Type\Grid\FacetFilteringType }

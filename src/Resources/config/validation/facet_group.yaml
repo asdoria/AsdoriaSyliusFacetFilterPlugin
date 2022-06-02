@@ -1,0 +1,15 @@
+Asdoria\SyliusFacetFilterPlugin\Entity\FacetGroup:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+                fields: [code]
+                groups: [sylius]
+    properties:
+        code:
+            - NotBlank:
+                groups: [sylius]
+        translations:
+            - Valid:
+                groups: [sylius]
+        position:
+            - NotBlank:
+                groups: [sylius]

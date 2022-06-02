@@ -1,0 +1,103 @@
+asdoria:
+    menu:
+        admin:
+            main:
+                facet_filter:
+                    header: Filtres à facettes
+        facet_filter:
+            facet_filters: Gestions des Filtres à facettes
+            facet_groups: Gestions Groupe de Facette
+    ui:
+        facet_type: Type de facette
+        list_facet_filter_filters: Liste des Facettes
+        manage_facet_group_children: Gestions des enfants
+        manage_facet_group: Gestions Groupe
+        taxon: Catégorie
+        parent_product: Produit Parent
+        facets: Liste des Facette
+        edit_facet: Edition d une facette
+        facet_groups: Groupe de Facettes
+        new_facet_filter: Création d'une matrice
+        edit_facet_filter: Edition d'une matrice
+        facet_filters: Filtres à facettes
+        facet_filter: Filtre à facette
+        facet_group: Groupe de facette
+        new_facet_group: Création d'un groupe de facette
+        edit_facet_group: Edition d'un groupe de facette
+        placeholder_multiple_select: Choisir
+        manage_facet_create: Creation
+        new_facet_create_product_attribute: Creation d'une facet attribute
+        new_facet_create_product_option: Creation d'une facet option
+        new_facet_create_product_taxon: Creation d'une facet categorie
+        new_facet: Nouvelle Facette
+        manage_your_facet_product_option: Gérer votre facette d'option de produit
+        manage_your_facet_product_attribute: Gérer votre facette d'attribute de produit
+        manage_your_facet_taxon: Gérer votre facette de categories
+        manage_your_facet: Gérer les facettes
+        manage_your_facet_group: Gérer les groupe de facettes
+        placeholder_attribute_checkbox: Selectionner un Attribute a filter
+        placeholder_attribute_select_expanded: Selectionner un Attribute a filter
+        placeholder_attribute_select_multiple: Selectionner un Attribute a filter
+        placeholder_attribute_select: Selectionner un Attribute a filter
+        placeholder_product_option_select_expanded: Selectionner un Option a filter
+        placeholder_product_option_select_multiple: Selectionner un Option a filter
+        placeholder_product_option_select:  Selectionner un Option a filter
+        placeholder_taxon_select_expanded: Selectionner une Catégorie a filter
+        placeholder_taxon_select_group_by: Selectionner une Catégorie a filter
+        placeholder_taxon_select_multiple: Selectionner une Catégorie a filter
+        placeholder_taxon_select: Selectionner une Catégorie a filter
+        placeholder_product_taxon: Selectionner une Catégorie
+        attribute_checkbox: Attribute checkbox
+        attribute_select_expanded: Attribute expanded
+        attribute_select_multiple: Attribute select multiple
+        attribute_select: Attribute select simple
+        product_option_select_expanded: Option expanded
+        product_option_select_multiple: Option select multiple
+        product_option_select: Option select simple
+        taxon_select_expanded: Catégorie expanded
+        taxon_select_group_by: Catégorie group by
+        taxon_select_multiple: Catégorie select multiple
+        taxon_select: Catégorie select simple
+    form:
+        facet:
+            product_attribute: Caractéristique
+            taxon: Catégorie
+            type: Type de Fitre
+            target_type: Cible de la Caractéristique
+            field_type: Type de Champs
+            target_type_parent: Mother
+            target_type_children: Article
+            facet_group: Segment
+            field_type_attribute_select_multiple: Attribute Sélecteur Multiple
+            field_type_attribute_select_expanded: Attribute Sélecteur Multiple Développé
+            field_type_taxon_select_multiple: Catégorie Sélecteur Multiple
+            field_type_taxon_select_multiple_expanded: Catégorie Sélecteur Multiple Développé
+            field_type_taxon_select: Catégorie Sélecteur Simple
+            field_type_attribute_select: Attribute Sélecteur Simple
+            field_type_attribute_checkbox: Attribute Case à cocher
+            field_type_attribute_radio: Attribute Radio Bouton
+            field_type_taxon_select_group_by: Catégorie par groupe
+            field_type_product_option_select: Option Sélecteur Simple
+            field_type_product_option_select_multiple: Option Sélecteur Multiple
+            field_type_product_option_select_expanded: Option Sélecteur Multiple Développé
+            position: Position
+            code: Identifiant
+            title: Titre
+            description: Description
+        facet_type_product_attribute:
+            product_attribute: Selectionner un Attribute a filter
+        facet_type_product_option:
+            product_option: Selectionner un Option a filter
+        facet_type_taxon:
+            taxon: Selectionner un Categorie a filter
+        facet_group:
+            position: Position
+            code: Identifiant
+            label: Libellé
+        facet_filter:
+            label: Libellé
+        facet_filter_code:
+            selected: Selectionner un filter à facette 
+            label: Filter à facette 
+    min: Min
+    max: Max

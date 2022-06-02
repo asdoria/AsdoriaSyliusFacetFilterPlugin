@@ -1,0 +1,10 @@
+sylius_grid:
+    grids:
+        sylius_shop_product:
+            filters:
+                facets_filters:
+                    type: facets_filters
+                    label: false
+                    options: 
+                        owner: taxon
+                        filterBy: owner

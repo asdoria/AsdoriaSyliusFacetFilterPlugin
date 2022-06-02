@@ -1,0 +1,9 @@
+{
+  "entrypoints": {
+    "admin-facet-filter": {
+      "js": [
+        "/bundles/asdoriafacet/admin-facet-filter.min.js"
+      ]
+    }
+  }
+}

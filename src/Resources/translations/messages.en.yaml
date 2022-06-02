@@ -1,0 +1,102 @@
+asdoria:
+    menu:
+        admin:
+            main:
+                facet_filter:
+                    header: Facet Filters
+        facet_filter:
+            facet_filters: Configure Facet Filters
+            facet_groups: Configure Facet Filters Groups
+    ui:
+        facet_type: Facet Type
+        list_facet_filter_filters: Facets list
+        manage_facet_group_children: Configure children
+        manage_facet_group: Edit Groups
+        taxon: Taxon
+        parent_product: Parent Product
+        facets: Facets list
+        edit_facet: Edit facet
+        facet_groups: Facets Groups
+        new_facet_filter: Create a matrix
+        edit_facet_filter: Edit a matrix
+        facet_filters: Facet Filters
+        facet_filter: Facet Filter
+        facet_group: Facet Group
+        new_facet_group: Create a facet group
+        edit_facet_group: Edit a facet group
+        placeholder_multiple_select: Select
+        manage_facet_create: Create
+        new_facet_create_product_attribute: Create an attribute facet 
+        new_facet_create_product_option: Create an option facet
+        new_facet_create_product_taxon: Create a taxon facet 
+        new_facet: New Facet
+        manage_your_facet_product_option: Edit your product option facet
+        manage_your_facet_product_attribute: Edit your product attribute facet
+        manage_your_facet_taxon: Edit your taxon facet
+        manage_your_facet: Edit facets
+        manage_your_facet_group: Edit facet groups
+        placeholder_attribute_checkbox: Select an attribute to filter
+        placeholder_attribute_select_expanded: Select an attribute to filter
+        placeholder_attribute_select_multiple: Select an attribute to filter
+        placeholder_attribute_select: Select an attribute to filter
+        placeholder_product_option_select_expanded: Select an option to filter
+        placeholder_product_option_select_multiple: Select an option to filter
+        placeholder_product_option_select: Select an option to filter
+        placeholder_taxon_select_expanded: Select a taxon to filter
+        placeholder_taxon_select_group_by: Select a taxon to filter
+        placeholder_taxon_select_multiple: Select a taxon to filter
+        placeholder_taxon_select: Select a taxon to filter
+        placeholder_product_taxon: Select a taxon
+        attribute_checkbox: Attribute checkbox
+        attribute_select_expanded: Attribute expanded
+        attribute_select_multiple: Attribute select multiple
+        attribute_select: Attribute select simple
+        product_option_select_expanded: Option expanded
+        product_option_select_multiple: Option select multiple
+        product_option_select: Option select simple
+        taxon_select_expanded: Taxon expanded
+        taxon_select_group_by: Taxon group by
+        taxon_select_multiple: Taxon select multiple
+        taxon_select: Taxon select simple
+    form:
+        facet:
+            product_attribute: Attribute
+            taxon: Taxon
+            type: Filter type
+            target_type: Attribute's target
+            field_type: Field type
+            target_type_parent: Mother
+            target_type_children: Article
+            facet_group: Segment
+            field_type_attribute_select_multiple: Attribute Multiple Selector
+            field_type_attribute_select_expanded: Attribute Multiple Selector Développé
+            field_type_taxon_select_multiple: Taxon Multiple Selector
+            field_type_taxon_select_multiple_expanded: Multiple Selector Expanded
+            field_type_taxon_select: Multiple Selector Simple
+            field_type_attribute_select: Attribute Selector Simple
+            field_type_attribute_checkbox: Attribute Checkbox
+            field_type_attribute_radio: Attribute Radio Button
+            field_type_taxon_select_group_by: Taxon by group
+            field_type_product_option_select: Option Selector Simple
+            field_type_product_option_select_multiple: Option Selector Multiple
+            field_type_product_option_select_expanded: Option Selector Multiple expanded
+            position: Position
+            code: Id
+            title: Title
+            description: Description
+        facet_type_product_attribute:
+            product_attribute: Select an Attribute to filter
+        facet_type_product_option:
+            product_option: Select an Option tofilter
+        facet_type_taxon:
+            taxon: Select a Taxon to filter
+        facet_group:
+            position: Position
+            code: Id
+            label: Name
+        facet_groups:
+            translations: Translations
+        facet_filter:
+            label: Name
+    min: Min
+    max: Max

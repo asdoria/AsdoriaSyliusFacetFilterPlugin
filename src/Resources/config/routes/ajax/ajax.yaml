@@ -1,0 +1,11 @@
+asdoria_admin_ajax_facet_group:
+    resource: "facet_group.yaml"
+    prefix: /facet-groups
+
+asdoria_admin_ajax_facet_filter:
+    resource: "facet_filter.yaml"
+    prefix: /facet-filters
+    
+asdoria_admin_ajax_facet:
+    resource: "facet.yaml"
+    prefix: /facet

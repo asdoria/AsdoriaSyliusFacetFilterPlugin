@@ -1,0 +1,5 @@
+services:
+    asdoria_facet_filter.form.extension.type.taxon:
+        class: Asdoria\SyliusFacetFilterPlugin\Form\Extension\TaxonTypeExtension
+        tags:
+            - { name : form.type_extension, extended_type: Sylius\Bundle\TaxonomyBundle\Form\Type\TaxonType, priority: -100 }

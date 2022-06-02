@@ -1,0 +1,12 @@
+services:
+    Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\Filters\AttributeFilterByFunnel:
+        tags:
+          - { name: attribute_filter }
+          
+    Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\Filters\AttributeFilterByOwnerAndTaxonInterface:
+        tags:
+          - { name: attribute_filter }
+
+    Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\Filters\AttributeFilterByOwnerAndTaxonsAware:
+        tags:
+          - { name: attribute_filter }

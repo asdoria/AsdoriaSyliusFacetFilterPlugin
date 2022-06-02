@@ -1,0 +1,12 @@
+services:
+    Asdoria\SyliusFacetFilterPlugin\Menu\FacetFilterFormMenuBuilder:
+        arguments:
+          $factory: "@knp_menu.factory"
+          $eventDispatcher: "@event_dispatcher"
+        tags:
+          - { name: knp_menu.menu_builder, method: createMenu, alias: "asdoria.admin.facet_filter_update"}
+
+    Asdoria\SyliusFacetFilterPlugin\Menu\AdminMenuListener:
+        public: true
+        tags:
+            - { name: kernel.event_listener, event: !php/const Sylius\Bundle\AdminBundle\Menu\MainMenuBuilder::EVENT_NAME, method: addMenuItems }

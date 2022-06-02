@@ -1,0 +1,23 @@
+asdoria_admin_facet_filter:
+  resource: |
+    alias: asdoria.facet_filter
+    section: admin
+    templates: '@SyliusAdmin\\Crud'
+    except: ['show']
+    redirect: update
+    grid: asdoria_admin_facet_filter
+    permission: true
+    vars:
+       all:
+         templates:
+            form: '@AsdoriaSyliusFacetFilterPlugin/FacetFilter/_form.html.twig'
+       update:
+         templates:
+            form: "@AsdoriaSyliusFacetFilterPlugin/FacetFilter/_form.html.twig"
+            toolbar: "@AsdoriaSyliusFacetFilterPlugin/FacetFilter/Update/_toolbar.html.twig"
+  type: sylius.resource
+
+
+asdoria_admin_facet_filter_facet:
+    resource: facet.yaml
+    prefix: /facet-filter/{facetFilterId}

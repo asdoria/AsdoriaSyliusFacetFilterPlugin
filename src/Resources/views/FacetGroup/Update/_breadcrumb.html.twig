@@ -1,0 +1,12 @@
+{% import '@SyliusAdmin/Macro/breadcrumb.html.twig' as breadcrumb %}
+
+{% set breadcrumbs = [
+    { label: 'sylius.ui.administration'|trans, url: path('sylius_admin_dashboard') },
+    { label: 'asdoria.ui.facet_filters'|trans , url: path('asdoria_admin_facet_filter_index')},
+    { label: 'asdoria.ui.manage_your_facet_group'|trans, url: path('asdoria_admin_facet_group_index') },
+    { label: resource.name },
+    { label: 'sylius.ui.edit'|trans }
+]
+%}
+
+{{ breadcrumb.crumble(breadcrumbs) }}

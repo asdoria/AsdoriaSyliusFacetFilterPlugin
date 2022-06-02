@@ -1,0 +1,9 @@
+asdoria_admin_facet_filter:
+    resource: "routes/facet_filter.yaml"
+
+asdoria_admin_facet_group:
+    resource: "routes/facet_group.yaml"
+
+asdoria_admin_facet_ajax:
+    resource: "routes/ajax/ajax.yaml"
+    prefix: /facet-filter/ajax

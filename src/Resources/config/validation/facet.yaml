@@ -1,0 +1,26 @@
+namespaces:
+    FacetFilter: Asdoria\SyliusFacetFilterPlugin\Validator\Constraints\
+Asdoria\SyliusFacetFilterPlugin\Entity\Facet:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+              fields: [ code, facetFilter ]
+              groups: [ sylius ]
+              message:  asdoria.facet.code.unique
+    properties:
+        code:
+            - NotBlank:
+                message:  asdoria.facet.code.not_blank
+                groups: [sylius]
+            - Regex:
+                message:  asdoria.facet.code.regex
+                pattern: '/^[\w]*$/'
+                groups: [sylius]
+        translations:
+            - Valid:
+                groups: [sylius]
+        position:
+            - NotBlank:
+                groups: [sylius]
+        facetGroup:
+            - NotBlank:
+                groups: [sylius]
