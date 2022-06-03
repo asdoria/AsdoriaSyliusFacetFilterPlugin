@@ -19,7 +19,7 @@ final class Version20220519071201 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        if(!$schema->hasTable('asdoria_facet')) return;
+        if($schema->hasTable('asdoria_facet')) return;
 
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE asdoria_facet (id INT AUTO_INCREMENT NOT NULL, facet_filter_id INT NOT NULL, facet_group_id INT DEFAULT NULL, code VARCHAR(255) NOT NULL, position INT NOT NULL, facetType_id INT DEFAULT NULL, UNIQUE INDEX UNIQ_1E574C9FBE43C8FC (facetType_id), INDEX IDX_1E574C9F96750B65 (facet_filter_id), INDEX IDX_1E574C9FC1B1976A (facet_group_id), UNIQUE INDEX UNIQ_1E574C9F96750B6577153098 (facet_filter_id, code), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
