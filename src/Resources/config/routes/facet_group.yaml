@@ -11,12 +11,14 @@ asdoria_admin_facet_group:
        update:
          templates:
            breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Update/_breadcrumb.html.twig"
+           form: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
        index:
          templates:
            breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Index/_breadcrumb.html.twig"
        create:
          templates:
            breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Create/_breadcrumb.html.twig"
+           form: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
   type: sylius.resource
 
 

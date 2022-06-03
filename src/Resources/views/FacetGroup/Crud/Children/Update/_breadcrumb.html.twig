@@ -1,5 +1,7 @@
 {% import '@SyliusAdmin/Macro/breadcrumb.html.twig' as breadcrumb %}
 
+{% set vars = configuration.parameters.get('vars') %}
+
 {% set breadcrumbs = [
     { label: 'sylius.ui.administration'|trans, url: path('sylius_admin_dashboard') },
     { label: 'asdoria.ui.facet_filters'|trans , url: path('asdoria_admin_facet_filter_index')},
