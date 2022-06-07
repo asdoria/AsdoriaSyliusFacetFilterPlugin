@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 namespace Asdoria\SyliusFacetFilterPlugin\Form\Type\Grid;
 
+use Asdoria\SyliusFacetFilterPlugin\Model\Aware\FacetFilterCodeAwareInterface;
 use Asdoria\SyliusFacetFilterPlugin\Model\FacetFilterInterface;
 use Asdoria\SyliusFacetFilterPlugin\Model\FacetGroupInterface;
 use Asdoria\SyliusFacetFilterPlugin\Model\FacetInterface;
@@ -77,8 +78,11 @@ class FacetFilteringType extends AbstractType
      */
     public function getFacetFilter(): ?FacetFilterInterface
     {
+        $resource = $this->getFacetFilterCodeAware();
+        if(!$resource instanceof FacetFilterCodeAwareInterface) return null;
+
         return $this->getFacetFilterRepository()
-            ->findOneByCode($this->getFacetFilterCodeAware()->getFacetFilterCode());
+            ->findOneByCode($resource->getFacetFilterCode());
     }
 
     /**

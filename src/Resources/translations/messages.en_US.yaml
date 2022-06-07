@@ -26,9 +26,9 @@ asdoria:
         edit_facet_group: Edit a facet group
         placeholder_multiple_select: Select
         manage_facet_create: Create
-        new_facet_create_product_attribute: Create an attribute facet
+        new_facet_create_product_attribute: Create an attribute facet 
         new_facet_create_product_option: Create an option facet
-        new_facet_create_product_taxon: Create a taxon facet
+        new_facet_create_product_taxon: Create a taxon facet 
         new_facet: New Facet
         manage_your_facet_product_option: Edit your product option facet
         manage_your_facet_product_attribute: Edit your product attribute facet
@@ -98,8 +98,5 @@ asdoria:
             translations: Translations
         facet_filter:
             label: Name
-        facet_filter_code:
-            label: Facet Filter
-            selected: Selected
     min: Min
     max: Max

@@ -1,0 +1,6 @@
+services:
+    Asdoria\SyliusFacetFilterPlugin\EventListener\FacetFilterEventListener:
+        calls:
+            - ['setEntityManager', ['@doctrine.orm.entity_manager']]
+        tags:
+            - { name: kernel.event_listener, event: 'asdoria.facet_filter.pre_delete', method: processPreDelete }

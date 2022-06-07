@@ -22,7 +22,7 @@ class AdminMenuListener
 
         $configuration = $menu->getChild('configuration');
         $configuration->addChild('facet_filter' , ['route' => 'asdoria_admin_facet_filter_index'])
-            ->setLabel('asdoria.menu.facet_filter.facet_filters')
+            ->setLabel('asdoria.menu.admin.main.facet_filter.header')
             ->setLabelAttribute('icon', 'list');
     }
 }

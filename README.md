@@ -105,7 +105,7 @@ class Taxon extends BaseTaxon implements FacetFilterCodeAwareInterface
     }
 }
 ```
-6. Override the Taxon Form template in `templates/bundles/SyliusAdminBundle/Taxon/_form.html.twig`.
+6. Override or create if not already existing the Taxon Form template in `templates/bundles/SyliusAdminBundle/Taxon/_form.html.twig`.
 
 ```twig
 
@@ -129,38 +129,59 @@ class Taxon extends BaseTaxon implements FacetFilterCodeAwareInterface
 ```
 7. run `php bin/console do:mi:mi` to update the database schema
 
+8. Finally, add translations to `config/packages/translation.yaml` :
+```
+framework:
+    default_locale: '%locale%'
+    translator:
+        paths:
+            - '%kernel.project_dir%/translations'
+        fallbacks:
+            - '%locale%'
+            - 'en'
+```
 ## Usage
 
-1. In the back office, inside the `Configuration` section, enter `Configure Facet Filters`
-2. Click `Edit Groups` and create a new one. Groups will help you organize your filters and group them when displaying on your site.
-3. Click `Create` and configure your group as you wish
-4. Return to the Facet Filter configuration page, and click `Create` to initialize Filters targetting a specific Taxon
-Inside the Code input, enter the code of a taxon you wish to create a filter for. This code can be found in the taxon's edit page at `{your-domain}/admin/taxons/{id}/edit` under Slug
-<div style="display:flex; align-items: center; justify-content: center;">
+1. In the back office, inside the `Configuration` section, go to `Facet Filters`.
 
-![Taxon interface](doc/taxon.png)
-![Taxon slug](doc/slug.png)
-</div>
+2. Click on `Edit Groups` and `Create` buttons and create a new one. Fill the fields with a code that will identify your facet group. Of course, this will not be the name on the user side: you can specify a name in each language below in the form. Groups will help you organize your filters and group them when displaying on your site.
 
-5. Going Back to the `Configure Facet Filters` page, we can now see our filter. Click `Edit facets` then `Facets list`, you can then create a new targeting the characteristic you need
-null5. Here you can create filters based on a product's category, attributes or options. Let's say you wish to filter products by their attributes : Click Create then Create an attribute facet
-6. Pick the relevant attribute under `Select an attribute to filter`. You can then select the type of field your customer will use to filter. Right under this, update the segment value to match the Facet Group created in step 2
-7. Go back to the edit page of your taxon `{your-domain}/admin/taxons/{id}/edit`. Your are now able to apply your new facet filter
- 
-<div style="max-width:75%; height: auto; margin: auto;">
+3. Once back on the previous page, click on `Configure children` linked to your new facet group. Fill the form in the same way as previously.
 
- ![Taxon Filter selection](doc/filter_selection.jpg)
+4. Return to the `Facet Filter` page, and click `Create` to initialize Filters targetting a specific Taxon. Inside the Code input, enter the code of a taxon you wish to create a filter for. This code can be found in the taxon's edit page at `{your-domain}/admin/taxons/{id}/edit` under Slug.
 
-</div>
-
-
-8. Now when going to the taxon's page on your website (e.g. `{domain}/taxons/short-sleeves`), your filters will be displayed and grouped according to the segments selected in step 6
+5. The interesting part begin here. Go on `Facet Filters` page, and click on `Edit facets` associated to your new filter. Several choices are available, let select `Create an attribute facet`. 
 
 <div style="max-width: 75%; height: auto; margin: auto">
 
-   ![Facet filter on taxon page](doc/shop_facet_filter_results.png)
+![Edit facts](doc/editfacets.png)
 
 </div>
 
+You can now fill the form with some cool things such as:
++ attribute to filter
++ segment, which represent the filter's group.
+Obviously, you can change the facet's name for each language to adapt your content by country.
 
+6. Go on the "Taxons" admin page and click on the three grey dots next to each other linked to the category of products you want to filter. Then, click on "Edit" button.
 
+<div style="max-width: 75%; height: auto; margin: auto">
+
+![Taxon interface](doc/taxon.png)
+
+</div>
+
+You can choose the facet filter to be used on your products.
+
+<div style="max-width: 75%; height: auto; margin: auto">
+
+![Taxon interface](doc/facetfiltertaxon.png)
+
+</div>
+
+7. Finally, see the results on the user side of your shop!
+<div style="max-width: 75%; height: auto; margin: auto">
+
+![Facet filter on taxon page](doc/shop_facet_filter_results.png)
+
+</div>

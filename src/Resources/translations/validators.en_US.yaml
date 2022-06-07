@@ -1,0 +1,6 @@
+asdoria:
+    facet:
+        code:
+            not_blank: Please enter Facet code.
+            regex: Facet code can only be comprised of letters, numbers, and underscores.
+            unique: Facet code has to be unique.
