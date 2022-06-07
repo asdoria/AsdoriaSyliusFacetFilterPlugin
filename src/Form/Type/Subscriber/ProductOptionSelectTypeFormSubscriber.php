@@ -42,6 +42,7 @@ class ProductOptionSelectTypeFormSubscriber extends AbstractTypeFormSubscriber
                 'choice_label'  => function (ProductOptionValueInterface $choice, $key, $value)  {
                     return $choice->getTranslation()->getValue();
                 },
+                'choice_value' => 'id',
                 'placeholder'   => sprintf('asdoria.ui.placeholder_%s', self::_IDENTIFIER),
                 'attr'          => array_merge([
                     'class' => 'mySelect'
