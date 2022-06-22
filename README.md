@@ -147,7 +147,10 @@ You can see the result for the user here with caps: [here](https://demo-sylius.a
 If you want to try to create filters, go on [the admin authentication page](https://demo-sylius.asdoria.fr/admin/) and connect with:
 > **Login:** asdoria <br>
 > **Password:** asdoria
+
 Then go on [facet filters page in back office](https://demo-sylius.asdoria.fr/admin/facet-filters/).
+
+Note that we have developed several other open source plugins for Sylius, whose demos and documentation are listed on the [following page](https://asdoria.github.io/).
 
 ## Usage
 
