@@ -140,6 +140,15 @@ framework:
             - '%locale%'
             - 'en'
 ```
+
+## Demo
+
+You can see the result for the user here with caps: [here](https://demo-sylius.asdoria.fr/en_US/taxons/category/caps). <br>
+If you want to try to create filters, go on [the admin authentication page](https://demo-sylius.asdoria.fr/admin/) and connect with:
+> **Login:** asdoria <br>
+> **Password:** asdoria
+Then go on [facet filters page in back office](https://demo-sylius.asdoria.fr/admin/facet-filters/).
+
 ## Usage
 
 1. In the back office, inside the `Configuration` section, go to `Facet Filters`.
