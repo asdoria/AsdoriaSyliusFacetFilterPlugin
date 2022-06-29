@@ -73,6 +73,7 @@ asdoria:
             field_type_taxon_select_multiple: Taxon Multiple Selector
             field_type_taxon_select_multiple_expanded: Multiple Selector Expanded
             field_type_taxon_select: Multiple Selector Simple
+            field_type_taxon_select_expanded: Multiple Selector Développé
             field_type_attribute_select: Attribute Selector Simple
             field_type_attribute_checkbox: Attribute Checkbox
             field_type_attribute_radio: Attribute Radio Button
