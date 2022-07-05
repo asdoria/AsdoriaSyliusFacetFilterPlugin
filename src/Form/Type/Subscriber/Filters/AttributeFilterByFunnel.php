@@ -35,7 +35,9 @@ class AttributeFilterByFunnel implements AttributeFilterInterface
         $qb->andWhere($wheres);
         /** @var Join $join */
         foreach ($joins as $join) {
-            $qb->join($join->getJoin(), $join->getAlias(), $join->getConditionType(), $join->getCondition());
+            ($join->getJoinType() === Join::LEFT_JOIN) ?
+            $qb->leftJoin($join->getJoin(), $join->getAlias(), $join->getConditionType(), $join->getCondition()):
+            $qb->innerJoin($join->getJoin(), $join->getAlias(), $join->getConditionType(), $join->getCondition());
         }
 
         $availableParams = $subscriber->getQueryBuilder()->getParameters()->filter(fn(Parameter $p) => !$attribute->isTranslatable() || $p->getName() !== ':localeCode');
