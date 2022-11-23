@@ -46,7 +46,12 @@
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "branch-alias": {
