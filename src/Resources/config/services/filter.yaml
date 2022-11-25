@@ -50,3 +50,7 @@ services:
     Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeRadioFilter:
         tags:
             - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeRadioTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeRadioTypeFormSubscriber'}
+
+    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionRadioFilter:
+        tags:
+            - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionRadioTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionRadioTypeFormSubscriber'}
