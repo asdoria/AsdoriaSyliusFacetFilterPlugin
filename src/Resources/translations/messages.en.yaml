@@ -81,6 +81,7 @@ asdoria:
             field_type_product_option_select: Option Selector Simple
             field_type_product_option_select_multiple: Option Selector Multiple
             field_type_product_option_select_expanded: Option Selector Multiple expanded
+            field_type_product_option_radio: Attribute Radio Button
             position: Position
             code: Id
             title: Title
