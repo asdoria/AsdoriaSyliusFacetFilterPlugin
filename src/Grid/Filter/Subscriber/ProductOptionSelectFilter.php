@@ -39,6 +39,7 @@ class ProductOptionSelectFilter implements DefaultFilterInterface
             ->innerJoin('o.variants', $alias)
             ->leftJoin(sprintf('%s.optionValues', $alias), $aliasOptionValue, 'WITH',$aliasOptionValue.'.id = :' . $param)
             ->setParameter($param, $value)
+            ->andWhere(sprintf('%s.id IS NOT NULL', $aliasOptionValue))
         ;
     }
 }
