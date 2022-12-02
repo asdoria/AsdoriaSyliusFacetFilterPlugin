@@ -58,6 +58,8 @@ asdoria:
         taxon_select_group_by: Taxon group by
         taxon_select_multiple: Taxon select multiple
         taxon_select: Taxon select simple
+        attribute_radio: Attribute Radio Button
+        product_option_radio: Option Radio Button
     form:
         facet:
             product_attribute: Attribute

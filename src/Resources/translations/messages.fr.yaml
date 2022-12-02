@@ -58,6 +58,8 @@ asdoria:
         taxon_select_group_by: Catégorie group by
         taxon_select_multiple: Catégorie select multiple
         taxon_select: Catégorie select simple
+        attribute_radio: Attribute Radio Bouton
+        product_option_radio: Option Radio Bouton
     form:
         facet:
             product_attribute: Caractéristique
@@ -80,7 +82,7 @@ asdoria:
             field_type_product_option_select: Option Sélecteur Simple
             field_type_product_option_select_multiple: Option Sélecteur Multiple
             field_type_product_option_select_expanded: Option Sélecteur Multiple Développé
-            field_type_product_option_radio: Attribute Radio Bouton
+            field_type_product_option_radio: Option Radio Bouton
             position: Position
             code: Identifiant
             title: Titre
@@ -98,7 +100,7 @@ asdoria:
         facet_filter:
             label: Libellé
         facet_filter_code:
-            selected: Selectionner un filter à facette 
-            label: Filter à facette 
+            selected: Selectionner un filter à facette
+            label: Filter à facette
     min: Min
     max: Max
