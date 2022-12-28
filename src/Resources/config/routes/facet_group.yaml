@@ -26,7 +26,7 @@ asdoria_admin_facet_group_children_index:
     path: /facet-groups/{facetGroupId}/children
     methods: [GET]
     defaults:
-      _controller: asdoria.controller.facet_group:indexAction
+      _controller: asdoria.controller.facet_group::indexAction
       _sylius:
         grid: asdoria_admin_facet_group_children
         vars:
@@ -45,7 +45,7 @@ asdoria_admin_facet_group_children_create:
   path: /facet-groups/{facetGroupId}/children/new
   methods: [GET, POST]
   defaults:
-    _controller: asdoria.controller.facet_group:createAction
+    _controller: asdoria.controller.facet_group::createAction
     _sylius:
       redirect:
         route: asdoria_admin_facet_group_children_index
@@ -71,7 +71,7 @@ asdoria_admin_facet_group_children_update:
   path: /facet-groups/{facetGroupId}/children/{id}/edit
   methods: [GET, PUT]
   defaults:
-    _controller: asdoria.controller.facet_group:updateAction
+    _controller: asdoria.controller.facet_group::updateAction
     _sylius:
       redirect: referer
       section: admin

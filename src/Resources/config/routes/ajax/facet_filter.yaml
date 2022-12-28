@@ -2,7 +2,7 @@ asdoria_admin_ajax_facet_filter_by_phrase:
     path: /search
     methods: [GET]
     defaults:
-        _controller: asdoria.controller.facet_filter:indexAction
+        _controller: asdoria.controller.facet_filter::indexAction
         _format: json
         _sylius:
             serialization_groups: [Autocomplete]
@@ -17,7 +17,7 @@ asdoria_admin_ajax_facet_filter_by_id:
     path: /
     methods: [GET]
     defaults:
-        _controller: asdoria.controller.facet_filter:indexAction
+        _controller: asdoria.controller.facet_filter::indexAction
         _format: json
         _sylius:
             serialization_groups: [Autocomplete]
@@ -30,7 +30,7 @@ asdoria_admin_ajax_facet_filter_search:
     path: /find
     methods: [GET]
     defaults:
-        _controller: asdoria.controller.facet_filter:indexAction
+        _controller: asdoria.controller.facet_filter::indexAction
         _format: json
         _sylius:
             permission: true

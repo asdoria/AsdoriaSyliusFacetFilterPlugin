@@ -2,7 +2,7 @@ asdoria_admin_facet_index:
     path: /facets
     methods: [GET]
     defaults:
-        _controller: asdoria.controller.facet:indexAction
+        _controller: asdoria.controller.facet::indexAction
         _sylius:
             grid: asdoria_admin_facet
             vars:
@@ -20,7 +20,7 @@ asdoria_admin_facet_update:
     path: /facets/{id}/edit
     methods: [GET, PUT]
     defaults:
-        _controller: asdoria.controller.facet:updateAction
+        _controller: asdoria.controller.facet::updateAction
         _sylius:
             redirect:
                 route: asdoria_admin_facet_index
@@ -44,7 +44,7 @@ asdoria_admin_facet_create_product_attribute:
         path: /facets/new/product-attribute
         methods: [GET, POST]
         defaults:
-            _controller: asdoria.controller.facet:createAction
+            _controller: asdoria.controller.facet::createAction
             _sylius:
                 section: admin
                 factory:
@@ -70,7 +70,7 @@ asdoria_admin_facet_create_product_option:
         path: /facets/new/product-option
         methods: [GET, POST]
         defaults:
-            _controller: asdoria.controller.facet:createAction
+            _controller: asdoria.controller.facet::createAction
             _sylius:
                 section: admin
                 factory:
@@ -96,7 +96,7 @@ asdoria_admin_facet_create_taxon:
         path: /facets/new/taxon
         methods: [GET, POST]
         defaults:
-            _controller: asdoria.controller.facet:createAction
+            _controller: asdoria.controller.facet::createAction
             _sylius:
                 section: admin
                 factory:
@@ -123,7 +123,7 @@ asdoria_admin_facet_delete:
     path: /facets/{id}
     methods: [DELETE]
     defaults:
-        _controller: asdoria.controller.facet:deleteAction
+        _controller: asdoria.controller.facet::deleteAction
         _sylius:
             redirect:
                 route: asdoria_admin_facet_index
