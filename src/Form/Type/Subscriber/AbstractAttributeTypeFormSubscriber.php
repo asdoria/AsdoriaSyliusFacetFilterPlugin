@@ -80,7 +80,8 @@ abstract class AbstractAttributeTypeFormSubscriber extends AbstractTypeFormSubsc
      */
     protected function getSelectedValue(FacetInterface $facet, FormInterface $parentForm)
     {
-        $criteria = $this->requestStack->getCurrentRequest()->query->get('criteria', []);
+        $request = $this->getRequest();
+        $criteria = $request->query->all('criteria');
         $groups   = $this->getGroups($parentForm);
         foreach ($groups as $group) {
             $criteria = $criteria[$group] ?? [];
