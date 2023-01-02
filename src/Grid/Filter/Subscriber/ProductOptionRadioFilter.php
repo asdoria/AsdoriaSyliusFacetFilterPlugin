@@ -16,7 +16,7 @@ use Doctrine\ORM\QueryBuilder;
  *
  * @author  Philippe Vesin <pve.asdoria@gmail.com>
  */
-class ProductOptionRadioFilter implements DefaultFilterInterface
+class ProductOptionSelectFilter implements DefaultFilterInterface
 {
     /**
      * @param QueryBuilder         $qb
@@ -37,7 +37,7 @@ class ProductOptionRadioFilter implements DefaultFilterInterface
         $aliasOptionValue = sprintf('%s_option_values', $alias);
         $qb
             ->innerJoin('o.variants', $alias)
-            ->leftJoin(sprintf('%s.optionValues', $alias), $aliasOptionValue, 'WITH',$aliasOptionValue.'.id = :' . $param)
+            ->innerJoin(sprintf('%s.optionValues', $alias), $aliasOptionValue, 'WITH',$aliasOptionValue.'.id = :' . $param)
             ->setParameter($param, $value)
         ;
     }
