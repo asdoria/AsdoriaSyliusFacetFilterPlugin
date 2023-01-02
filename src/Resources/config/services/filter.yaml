@@ -2,7 +2,7 @@ services:
     Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectMultipleFilter:
         tags:
             - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectMultipleTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeSelectMultipleTypeFormSubscriber'}
-    
+
     asdoria.filter_grid.attribute_select_expanded:
         class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectMultipleFilter
         tags:
@@ -46,11 +46,13 @@ services:
         class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionSelectMultipleFilter
         tags:
             - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectExpandedTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionSelectExpandedTypeFormSubscriber'}
-    
-    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeRadioFilter:
+
+    asdoria.filter_grid.attribute_radio:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\AttributeSelectFilter
         tags:
             - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_attribute.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeRadioTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\AttributeRadioTypeFormSubscriber'}
 
-    Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionRadioFilter:
+    asdoria.filter_grid.product_option_radio:
+        class: Asdoria\SyliusFacetFilterPlugin\Grid\Filter\Subscriber\ProductOptionSelectFilter
         tags:
             - { name: 'asdoria.search_filter', class_type: '%sylius.model.product_option.class%', type: !php/const Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionRadioTypeFormSubscriber::_IDENTIFIER, form_type: 'Asdoria\SyliusFacetFilterPlugin\Form\Type\Subscriber\ProductOptionRadioTypeFormSubscriber'}

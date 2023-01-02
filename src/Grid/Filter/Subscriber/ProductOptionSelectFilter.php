@@ -37,7 +37,7 @@ class ProductOptionSelectFilter implements DefaultFilterInterface
         $aliasOptionValue = sprintf('%s_option_values', $alias);
         $qb
             ->innerJoin('o.variants', $alias)
-            ->leftJoin(sprintf('%s.optionValues', $alias), $aliasOptionValue, 'WITH',$aliasOptionValue.'.id = :' . $param)
+            ->innerJoin(sprintf('%s.optionValues', $alias), $aliasOptionValue, 'WITH',$aliasOptionValue.'.id = :' . $param)
             ->setParameter($param, $value)
         ;
     }
