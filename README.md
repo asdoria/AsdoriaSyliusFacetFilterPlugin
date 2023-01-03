@@ -37,10 +37,10 @@ Our plugin allows you to link specific attributes, options and other facets to s
 ## Installation
 
 ---
-2. run `composer require asdoria/sylius-facet-filter-plugin`
+1. run `composer require asdoria/sylius-facet-filter-plugin`
 
 
-3. Add the bundle in `config/bundles.php`. You must put it ABOVE `SyliusGridBundle`
+2. Add the bundle in `config/bundles.php`. You must put it ABOVE `SyliusGridBundle`
 
 ```php
 Asdoria\SyliusFacetFilterPlugin\AsdoriaSyliusFacetFilterPlugin::class => ['all' => true],
@@ -48,7 +48,7 @@ Asdoria\SyliusFacetFilterPlugin\AsdoriaSyliusFacetFilterPlugin::class => ['all' 
 Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
 ```
 
-4. Import routes in `config/routes.yaml`
+3. Import routes in `config/routes.yaml`
 
 ```yaml
 asdoria_facet_filter:
@@ -57,7 +57,7 @@ asdoria_facet_filter:
 ```
 
 
-5. add the facets_filters filter into you grid config exemple for in `config/packages/grids/sylius_shop_product.yaml` but is already configure into the bundle for this grid
+4. add the facets_filters filter into you grid config exemple for in `config/packages/grids/sylius_shop_product.yaml` but is already configure into the bundle for this grid
 ```yaml
 sylius_grid:
     grids:
@@ -74,10 +74,20 @@ sylius_grid:
  # This option "filterBy" is optional but if you don't specify it, the different filters will be filled with the list of attributes of all shops.
 ```
 
-6. Import the plugin's config in `config/packages/_sylius.yaml`
+5. Import the plugin's config and add new config for `sylius.shop.product.index.search` event in `config/packages/_sylius.yaml`
 ```yaml
 imports:
     - { resource: "@AsdoriaSyliusFacetFilterPlugin/Resources/config/config.yaml"}
+...
+sylius_ui:
+    events:
+        sylius.shop.product.index.search:
+            blocks:
+                search:
+                    template: "@SyliusUi/Block/_legacySonataEvent.html.twig"
+                    priority: 30
+                    context:
+                        event: sylius.shop.product.index.disabled_search
 ```
 
 6. Implement the Facet Interface and Trait in your Taxon Entity `App/Entity/Taxonomy/Taxon.php`.
@@ -105,7 +115,7 @@ class Taxon extends BaseTaxon implements FacetFilterCodeAwareInterface
     }
 }
 ```
-6. Override or create if not already existing the Taxon Form template in `templates/bundles/SyliusAdminBundle/Taxon/_form.html.twig`.
+7. Override or create if not already existing the Taxon Form template in `templates/bundles/SyliusAdminBundle/Taxon/_form.html.twig`.
 
 ```twig
 
@@ -127,9 +137,29 @@ class Taxon extends BaseTaxon implements FacetFilterCodeAwareInterface
 {% include '@SyliusAdmin/Taxon/_media.html.twig' %}
 
 ```
-7. run `php bin/console do:mi:mi` to update the database schema
+8. Override or create if not already existing the Product Index template in `templates/bundles/SyliusShopBundle/Product/index.html.twig`
+```twig
+{% extends '@SyliusShop/layout.html.twig' %}
 
-8. Finally, add translations to `config/packages/translation.yaml` :
+{% block content %}
+{% include '@SyliusShop/Product/Index/_header.html.twig' %}
+<div class="ui stackable grid">
+    <div class="four wide column">
+        {% include '@SyliusShop/Product/Index/_sidebar.html.twig' %}
+        <div class="ui fluid vertical menu"></div>
+        <div class="ui fluid vertical menu"></div>
+        {% include '@SyliusShop/Product/Index/_search.html.twig' %}
+    </div>
+    <div class="twelve wide column">
+        {% include '@SyliusShop/Product/Index/_main.html.twig' %}
+    </div>
+</div>
+{% endblock %}
+```
+
+9. run `php bin/console do:mi:mi` to update the database schema
+
+10. Finally, add translations to `config/packages/translation.yaml` :
 ```
 framework:
     default_locale: '%locale%'
