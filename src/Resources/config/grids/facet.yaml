@@ -40,24 +40,20 @@ sylius_grid:
                     create:
                         type: links
                         label: asdoria.ui.manage_facet_create
-                        icon: cubes
                         options:
                             links:
                                 attribute:
                                     route: asdoria_admin_facet_create_product_attribute
-                                    icon: plus
                                     label: asdoria.ui.new_facet_create_product_attribute
                                     parameters:
                                         facetFilterId: $facetFilterId
                                 option:
                                     route: asdoria_admin_facet_create_product_option
-                                    icon: plus
                                     label: asdoria.ui.new_facet_create_product_option
                                     parameters:
                                         facetFilterId: $facetFilterId
                                 taxon:
                                     route: asdoria_admin_facet_create_taxon
-                                    icon: plus
                                     label: asdoria.ui.new_facet_create_product_taxon
                                     parameters:
                                         facetFilterId: $facetFilterId

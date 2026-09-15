@@ -38,11 +38,9 @@ sylius_grid:
                     manage:
                         type: default
                         label: asdoria.ui.manage_facet_group_children
-                        icon: cubes
                         options:
                             link:
                                 route: asdoria_admin_facet_group_children_index
-                                icon: plus
                                 label: asdoria.ui.manage_facet_group_children
                                 parameters:
                                     facetGroupId: resource.id

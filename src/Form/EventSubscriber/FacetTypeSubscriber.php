@@ -49,8 +49,8 @@ class FacetTypeSubscriber implements EventSubscriberInterface
         $metadata = $this->metadataRegistry->getByClass($classType);
 
         $form = $event->getForm();
-
         $formClass = $metadata->getClass('form');
+
         $form->add('facetType', $formClass, [
             'required' => true,
             'constraints' => [new Valid()],

@@ -7,6 +7,7 @@ namespace Asdoria\SyliusFacetFilterPlugin\Form\Type;
 use App\Entity\Taxonomy\Taxon;
 use Asdoria\SyliusFacetFilterPlugin\Form\EventSubscriber\TypeFacetTypeSubscriber;
 use Asdoria\SyliusFacetFilterPlugin\Traits\FilterFormTypeRegistryTrait;
+use Sylius\Bundle\AdminBundle\Form\Type\TaxonAutocompleteType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Sylius\Bundle\TaxonomyBundle\Form\Type\TaxonAutocompleteChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,8 +28,9 @@ class FacetTypeTaxonType extends AbstractResourceType
     {
         $choices = $this->getFilterFormTypeRegistry()->getAll()[Taxon::class] ?? [];
         $builder
-            ->add('taxon', TaxonAutocompleteChoiceType::class, [
-                'label' => 'asdoria.form.facet_type_taxon.taxon'
+            ->add('taxon', TaxonAutocompleteType::class, [
+                'label' => 'asdoria.form.facet_type_taxon.taxon',
+                'multiple' => false,
             ])
             ->addEventSubscriber(new TypeFacetTypeSubscriber($choices));
     }

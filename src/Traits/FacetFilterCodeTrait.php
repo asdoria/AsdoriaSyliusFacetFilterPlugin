@@ -14,8 +14,12 @@ trait FacetFilterCodeTrait
 {
     /**
      * @var string
-     * @ORM\Column(type="string", nullable="true", options={"default": null})
      */
+    #[ORM\Column(
+        type: "string",
+        nullable: true,
+        options: ["default" => null]
+    )]
     protected ?string $facetFilterCode = null;
 
     /**

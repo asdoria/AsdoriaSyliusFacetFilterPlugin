@@ -1,12 +1,37 @@
-{% from '@SyliusAdmin/Macro/translationForm.html.twig' import translationForm %}
+{% if form is not defined %}
+    {% set form = hookable_metadata.context.form %}
+{% endif %}
+
+{% import '@SyliusAdmin/shared/helper/translations.html.twig' as translations %}
 
 {{ form_errors(form) }}
-<div class="ui segment">
-    <div class="two fields">
-        {{ form_row(form.code) }}
-        {{ form_row(form.position) }}
+<div class="row">
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.code) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.position) }}
+        </div>
     </div>
-    {{ form_row(form.facetType) }}
-    {{ form_row(form.facetGroup) }}
-    {{ translationForm(form.translations) }}
+    <div class="row">
+        {{ form_row(form.facetType) }}
+    </div>
+    <div class="row">
+        {{ form_row(form.facetGroup) }}
+    </div>
+    <div class="row">
+        <div class="tab-pane {% if hookable_metadata.configuration.active|default(false) %}show active{% endif %}" id="facet-group-translations" role="tabpanel" tabindex="0">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        {{ 'asdoria.form.translations.facet'|trans }}
+                    </h2>
+                </div>
+                <div>
+                    {{ translations.default(form.translations, null, {accordion_id: 'facet-group-translations', accordion_flush: true}) }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

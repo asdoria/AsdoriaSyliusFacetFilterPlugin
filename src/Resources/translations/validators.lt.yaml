@@ -1,0 +1,6 @@
+asdoria:
+    facet:
+        code:
+            not_blank: Įveskite aspekto kodą.
+            regex: Aspekto kodą gali sudaryti tik raidės, skaičiai ir apatiniai brūkšniai.
+            unique: Aspekto kodas turi būti unikalus.

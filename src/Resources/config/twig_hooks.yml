@@ -1,0 +1,66 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.facet.index#javasctips':
+            facet_filter: 
+                template: "@AsdoriaSyliusFacetFilterPlugin/_javascripts.html.twig"
+                
+        'sylius_admin.facet.index.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Facet/Index/_breadcrumb.html.twig'
+                
+        'sylius_admin.facet.create.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Facet/Create/_breadcrumb.html.twig'      
+                
+        'sylius_admin.facet.create.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig'
+                
+        'sylius_admin.facet.update.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Facet/Update/_breadcrumb.html.twig'
+                
+        'sylius_admin.facet.update.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig'
+                
+        'sylius_admin.facet_filter.create.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetFilter/_form.html.twig'
+                
+        'sylius_admin.facet_filter.update.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetFilter/_form.html.twig'
+
+        'sylius_admin.facet_group.index#javasctips':
+            facet_filter:
+                template: "@AsdoriaSyliusFacetFilterPlugin/_javascripts.html.twig"
+                
+        'sylius_admin.facet_group.index.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Index/_breadcrumb.html.twig'
+                
+        'sylius_admin.facet_group.create.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Create/_breadcrumb.html.twig'
+        
+        'sylius_admin.facet_group.create.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
+                
+        'sylius_admin.facet_group.update.content.header':
+            breadcrumbs:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/Update/_breadcrumb.html.twig'
+        
+        'sylius_admin.facet_group.update.content.form.sections':
+            general:
+                template: '@AsdoriaSyliusFacetFilterPlugin/FacetGroup/_form.html.twig'
+
+        'sylius_admin.taxon.update.content.sections.form.general':
+            facets_filters:
+                template: '@AsdoriaSyliusFacetFilterPlugin/Taxon/_facetFilterCode.html.twig'
+                priority: -100
+
+        'sylius_shop.product.index#javasctips':
+            facet_filter:
+                template: "@AsdoriaSyliusFacetFilterPlugin/Shop/_javascripts.html.twig"

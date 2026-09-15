@@ -20,7 +20,6 @@ use Symfony\Component\Form\FormEvents;
  */
 class TypeFacetTypeSubscriber implements EventSubscriberInterface
 {
-
     protected array $baseChoices = [];
 
     public function __construct(array $baseChoices)

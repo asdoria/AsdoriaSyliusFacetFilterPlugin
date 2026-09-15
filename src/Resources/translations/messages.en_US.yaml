@@ -98,5 +98,7 @@ asdoria:
             translations: Translations
         facet_filter:
             label: Name
+        translations:
+            facet_group: Facet Group translations
     min: Min
     max: Max

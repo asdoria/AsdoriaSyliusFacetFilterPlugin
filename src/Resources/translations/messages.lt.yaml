@@ -1,0 +1,113 @@
+asdoria:
+    menu:
+        admin:
+            main:
+                facet_filter:
+                    header: Facet filtrai
+        facet_filter:
+            facet_filters: Konfigūruokite aspektų filtrus
+            facet_groups: Konfigūruokite aspektų filtrų grupes
+    ui:
+        facet: Aspektas
+        facet_type: Aspekto tipas
+        list_facet_filter_filters: Aspektų sąrašas
+        manage_facet_group_children: Konfigūruoti vaikus
+        manage_facet_group: Redaguoti grupes
+        taxon: Taksonas
+        parent_product: Pirminis produktas
+        facets: Aspektų sąrašas
+        edit_facet: Redaguoti aspektą
+        facet_groups: Aspektų grupės
+        new_facet_filter: Sukurkite briaunų filtrą
+        edit_facet_filter: Redaguoti aspektų filtrą
+        facet_filters: Facet filtrai
+        facet_filter: Facet filtras
+        facet_group: Facet grupė
+        new_facet_group: Sukurkite aspektų grupę
+        edit_facet_group: Redaguoti aspektų grupę
+        placeholder_multiple_select: Pasirinkite
+        manage_facet_create: Sukurti
+        new_facet_create_product_attribute: Sukurkite atributo aspektą
+        new_facet_create_product_option: Sukurkite pasirinkimo aspektą
+        new_facet_create_product_taxon: Sukurkite taksono aspektą
+        new_facet: Naujas aspektas
+        manage_your_facet_product_option: Redaguokite produkto parinkties aspektą
+        manage_your_facet_product_attribute: Redaguokite produkto atributo aspektą
+        manage_your_facet_taxon: Redaguokite taksono aspektą
+        manage_your_facet: Redaguoti aspektus
+        manage_your_facet_group: Redaguoti aspektų grupes
+        placeholder_attribute_checkbox: Pasirinkite atributą, kurį norite filtruoti
+        placeholder_attribute_select_expanded: Pasirinkite atributą, kurį norite filtruoti
+        placeholder_attribute_select_multiple: Pasirinkite atributą, kurį norite filtruoti
+        placeholder_attribute_select: Pasirinkite atributą, kurį norite filtruoti
+        placeholder_product_option_select_expanded: Pasirinkite filtravimo parinktį
+        placeholder_product_option_select_multiple: Pasirinkite filtravimo parinktį
+        placeholder_product_option_select: Pasirinkite filtravimo parinktį
+        placeholder_taxon_select_expanded: Pasirinkite taksoną, kurį norite filtruoti
+        placeholder_taxon_select_group_by: Pasirinkite taksoną, kurį norite filtruoti
+        placeholder_taxon_select_multiple: Pasirinkite taksoną, kurį norite filtruoti
+        placeholder_taxon_select: Pasirinkite taksoną, kurį norite filtruoti
+        placeholder_product_taxon: Pasirinkite taksoną
+        attribute_checkbox: Atributo žymės langelis
+        attribute_select_expanded: Atributas išplėstas
+        attribute_select_multiple: Atributas pasirinkite kelis
+        attribute_select: Paprastas atributo pasirinkimas
+        product_option_select_expanded: Parinktis išplėsta
+        product_option_select_multiple: Galimybė pasirinkti kelis
+        product_option_select: Parinktis pasirinkite paprastą
+        taxon_select_expanded: Taksonas išsiplėtė
+        taxon_select_group_by: Taksonus grupuoti pagal
+        taxon_select_multiple: Taksonas pasirinkite kelis
+        taxon_select: Taksonų pasirinkimas paprastas
+        attribute_radio: Atributo radijo mygtukas
+        product_option_radio: Parinkčių radijo mygtukas
+    form:
+        facet:
+            product_attribute: Atributas
+            taxon: Taksonas
+            type: Filtro tipas
+            target_type: Atributo taikinys
+            field_type: Lauko tipas
+            target_type_parent: Motina
+            target_type_children: Straipsnis
+            facet_group: Segmentas
+            field_type_attribute_select_multiple: Atributų kelių parinkiklis
+            field_type_attribute_select_expanded: Atributas Multiple Selector Développé
+            field_type_taxon_select_multiple: Taksono kelių parinkiklis
+            field_type_taxon_select_multiple_expanded: Išskleistas kelių parinkiklis
+            field_type_taxon_select: Paprastas kelių parinkiklis
+            field_type_taxon_select_expanded: Kelių rinkmenų parinkimas Développé
+            field_type_attribute_select: Paprastas atributų parinkiklis
+            field_type_attribute_checkbox: Atributo žymimasis laukelis
+            field_type_attribute_radio: Atributo radijo mygtukas
+            field_type_taxon_select_group_by: Taksonas pagal grupes
+            field_type_product_option_select: Paprastas parinkčių parinkiklis
+            field_type_product_option_select_multiple: Parinkčių parinkiklis Keli
+            field_type_product_option_select_expanded: Parinkčių parinkiklis Keli išskleistas
+            field_type_product_option_radio: Daugiafunkcis pasirinkimas
+            position: Pozicija
+            code: Id
+            title: Pavadinimas
+            description: Aprašymas
+        facet_type_product_attribute:
+            product_attribute: Pasirinkite atributą, kurį norite filtruoti
+        facet_type_product_option:
+            product_option: Pasirinkite filtravimo parinktį
+        facet_type_taxon:
+            taxon: Pasirinkite taksoną, kurį norite filtruoti
+        facet_group:
+            position: Pozicija
+            code: Id
+            label: Etiketė
+        facet_groups:
+            translations: Vertimai
+        facet_filter:
+            label: Vardas
+        facet_filter_code:
+            label: Facet filtras
+            selected: Pasirinkta
+        translations:
+            facet_group: Aspektų grupės vertimai
+            facet: Faset vertimai
+    min: Min
+    max: Max

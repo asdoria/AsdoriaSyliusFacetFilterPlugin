@@ -2,8 +2,8 @@
       action="{{ path('asdoria_admin_ajax_facet_update_position') }}"
       data-csrf-token="{{ csrf_token('update-facet-position') }}"
 >
-    <button class="ui labeled loadable icon button sylius-save-position" type="submit">
-        <i class="icon checkmark"></i>
+    <button class="btn" type="submit">
+        {{ ux_icon('tabler:pencil', { 'class': 'icon icon-tabler' }) }}
         {{ 'sylius.ui.save_positions'|trans }}
     </button>
 </form>

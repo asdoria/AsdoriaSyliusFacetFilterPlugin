@@ -8,6 +8,7 @@ asdoria:
             facet_filters: Configure Facet Filters
             facet_groups: Configure Facet Filters Groups
     ui:
+        facet: Facet
         facet_type: Facet Type
         list_facet_filter_filters: Facets list
         manage_facet_group_children: Configure children
@@ -83,7 +84,7 @@ asdoria:
             field_type_product_option_select: Option Selector Simple
             field_type_product_option_select_multiple: Option Selector Multiple
             field_type_product_option_select_expanded: Option Selector Multiple expanded
-            field_type_product_option_radio: Attribute Radio Button
+            field_type_product_option_radio: Multichoice
             position: Position
             code: Id
             title: Title
@@ -105,5 +106,8 @@ asdoria:
         facet_filter_code:
             label: Facet Filter
             selected: Selected
+        translations:
+            facet_group: Facet Group translations
+            facet: Facet translations
     min: Min
     max: Max

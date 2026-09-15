@@ -1,11 +1,10 @@
-{% import '@SyliusAdmin/Macro/breadcrumb.html.twig' as breadcrumb %}
+{% from '@SyliusAdmin/shared/helper/breadcrumbs.html.twig' import breadcrumbs %}
 
-{% set breadcrumbs = [
-    { label: 'sylius.ui.administration'|trans, url: path('sylius_admin_dashboard') },
-    { label: 'asdoria.ui.facet_filters'|trans , url: path('asdoria_admin_facet_filter_index')},
-    { label: 'asdoria.ui.manage_your_facet_group'|trans, url: path('asdoria_admin_facet_group_index') },
-    { label: 'sylius.ui.create'|trans }
-]
-%}
-
-{{ breadcrumb.crumble(breadcrumbs) }}
+{{ breadcrumbs(
+    [
+        { name: 'sylius.ui.dashboard'|trans, url: path('sylius_admin_dashboard'), active: false },
+        { name: 'asdoria.ui.facet_filters'|trans , url: path('asdoria_admin_facet_filter_index'), active: false },
+        { name: 'asdoria.ui.manage_your_facet_group'|trans, url: path('asdoria_admin_facet_group_index'), active: false },
+        { name: 'sylius.ui.create'|trans }
+    ]
+) }}

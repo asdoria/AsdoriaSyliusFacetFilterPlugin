@@ -18,7 +18,6 @@ use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
  */
 class FacetFilterEventListener
 {
-
     use EntityManagerTrait;
 
     public function processPreDelete(ResourceControllerEvent $event) {

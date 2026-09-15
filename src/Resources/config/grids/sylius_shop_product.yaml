@@ -1,4 +1,7 @@
 sylius_grid:
+    templates:
+        filter:
+            facets_filters: "@AsdoriaSyliusFacetFilterPlugin/Grid/Filter/facetsFilters.html.twig"
     grids:
         sylius_shop_product:
             filters:

@@ -1,5 +1,4 @@
 services:
-
     asdoria.form_registry.facet_type_filter:
        class: Asdoria\SyliusFacetFilterPlugin\Registry\FormTypeRegistry
 

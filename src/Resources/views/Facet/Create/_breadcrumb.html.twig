@@ -4,11 +4,10 @@
 
 {{ breadcrumbs(
     [
-        { name: 'sylius.ui.dashboard'|trans, url: path('sylius_admin_dashboard'), active: false },
+        { name: 'sylius.ui.administration'|trans, url: path('sylius_admin_dashboard'), active: false },
         { name: 'asdoria.ui.facet_filters'|trans , url: path('asdoria_admin_facet_filter_index'), active: false },
         { name: resource.facetFilter.name, url: path('asdoria_admin_facet_filter_update', {'id': resource.facetFilter.id}), active: false },
         { name: 'asdoria.ui.manage_your_facet'|trans, url: path('asdoria_admin_facet_index', {'facetFilterId': resource.facetFilter.id}), active: false },
-        { name: resource.code, active: false },
-        { name: 'sylius.ui.edit'|trans }
+        { name: 'asdoria.ui.new_facet'|trans },
     ]
 ) }}

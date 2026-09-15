@@ -7,7 +7,7 @@ namespace Asdoria\SyliusFacetFilterPlugin\Form\Type;
 
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -22,11 +22,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class ProductTaxonFilterType extends AbstractType
 {
-    use ContainerAwareTrait;
     /** @var ExpressionLanguage */
     private ExpressionLanguage $expression;
     /** @var RequestStack  */
     protected RequestStack $requestStack;
+
+    protected ContainerInterface $container;
 
     /**
      * @param ExpressionLanguage $expression
@@ -134,6 +135,11 @@ class ProductTaxonFilterType extends AbstractType
         );
 
         return $this->expression->evaluate($expression, ['container' => $this->container]);
+    }
+
+    public function setContainer(ContainerInterface $container)
+    {
+        $this->container = $container;
     }
 
     /**

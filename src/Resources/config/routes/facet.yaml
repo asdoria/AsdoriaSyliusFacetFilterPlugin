@@ -13,7 +13,7 @@ asdoria_admin_facet_index:
                     parameters:
                         facetFilterId: $facetFilterId
             section: admin
-            template: '@SyliusAdmin/Crud/index.html.twig'
+            template: '@SyliusAdmin\\shared\\crud\\index.html.twig'
 
 
 asdoria_admin_facet_update:
@@ -27,7 +27,7 @@ asdoria_admin_facet_update:
                 parameters:
                     facetFilterId : $facetFilterId
             section: admin
-            template: '@SyliusAdmin/Crud/update.html.twig'
+            template: '@SyliusAdmin\\shared\\crud\\update.html.twig'
             vars:
                 facetFilter: expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
                 route:
@@ -36,7 +36,6 @@ asdoria_admin_facet_update:
                         facetFilterId: $facetFilterId
                         id: $id
                 templates:
-                   form: "@AsdoriaSyliusFacetFilterPlugin/Facet/_form.html.twig"
                    toolbar: "@AsdoriaSyliusFacetFilterPlugin/Facet/Update/_toolbar.html.twig"
                    breadcrumb: "@AsdoriaSyliusFacetFilterPlugin/Facet/Update/_breadcrumb.html.twig"
                    
@@ -51,7 +50,7 @@ asdoria_admin_facet_create_product_attribute:
                     method: createForProductAttribute # like here for example
                     arguments:
                         - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
-                template: '@SyliusAdmin/Crud/create.html.twig'
+                template: '@SyliusAdmin\\shared\\crud\\create.html.twig'
                 redirect: 
                     route: asdoria_admin_facet_index
                     parameters:
@@ -77,7 +76,7 @@ asdoria_admin_facet_create_product_option:
                     method: createForProductOption # like here for example
                     arguments:
                         - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
-                template: '@SyliusAdmin/Crud/create.html.twig'
+                template: '@SyliusAdmin\\shared\\crud\\create.html.twig'
                 redirect: 
                     route: asdoria_admin_facet_index
                     parameters:
@@ -103,7 +102,7 @@ asdoria_admin_facet_create_taxon:
                     method: createForTaxon # like here for example
                     arguments:
                         - expr:notFoundOnNull(service('asdoria.repository.facet_filter').find($facetFilterId))
-                template: '@SyliusAdmin/Crud/create.html.twig'
+                template: '@SyliusAdmin\\shared\\crud\\create.html.twig'
                 redirect: 
                     route: asdoria_admin_facet_index
                     parameters:

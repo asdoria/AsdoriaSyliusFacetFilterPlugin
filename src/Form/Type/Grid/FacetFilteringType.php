@@ -106,7 +106,6 @@ class FacetFilteringType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         /** @var FacetInterface $attribute */
-
         foreach ($this->getFacets() as $facet) {
             $this->processGroupBuilder($facet, $builder);
             $className  = $this->getEntityManager()
@@ -154,8 +153,7 @@ class FacetFilteringType extends AbstractType
     public function processGroupBuilder(
         FacetInterface       $attribute,
         FormBuilderInterface $builder
-    ): void
-    {
+    ): void {
         $group        = $attribute->getFacetGroup();
         $groupBuilder = $this->buildFacetGroup($builder, $group);
         foreach ($group->getAncestors() as $ancestor) {
